@@ -32,7 +32,8 @@ public class StartUISQL extends StartUI {
     public static void main(String[] args) throws Exception {
         Input input = new ConsoleInput();
         Input validate = new ValidateInput(input);
-        try (ITracker tracker = new TrackerSQL(init())) {
+        try (ITracker tracker = new HbmTracker()) {
+//            try (ITracker tracker = new TrackerSQL(init())) {
             List<UserAction> actions = new ArrayList<>();
             actions.add(new CreateAction(0, "Add a new item"));
             actions.add(new FindAllAction(1, "Show all items"));

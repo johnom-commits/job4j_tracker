@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import javax.persistence.criteria.CriteriaBuilder;
+
 public class DeleteAction extends BaseAction {
 
     protected DeleteAction(int key, String name) {
@@ -13,7 +15,7 @@ public class DeleteAction extends BaseAction {
 
     @Override
     public boolean execute(Input input, ITracker tracker) {
-        Integer id = input.askInt("Enter Id:", 7);
+        Integer id = Integer.valueOf(input.askStr("Enter Id:"));
         boolean result = tracker.delete(id);
         if (result) {
             System.out.println("Item delete.");

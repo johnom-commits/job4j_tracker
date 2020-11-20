@@ -13,7 +13,7 @@ public class ReplaceAction extends BaseAction {
 
     @Override
     public boolean execute(Input input, ITracker tracker) {
-        Integer id = input.askInt("Enter Id:", 7);
+        Integer id = Integer.valueOf(input.askStr("Enter Id:"));
         String name = input.askStr("Enter new name:");
         Item item = new Item(name);
         item.setId(id);

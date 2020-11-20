@@ -13,7 +13,7 @@ public class FindByIdAction extends BaseAction {
 
     @Override
     public boolean execute(Input input, ITracker tracker) {
-        Integer id = input.askInt("Please, enter Id:", 7);
+        Integer id = Integer.valueOf(input.askStr("Please, enter Id:"));
         Item item = tracker.findById(id);
         if (item != null) {
             System.out.println("Item: " + item.getName());
